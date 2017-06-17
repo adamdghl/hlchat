@@ -13,12 +13,13 @@
 
     <title>模版</title>
 
-    <link rel="shortcut icon" href="favicon.ico"> <link href="/hlchat/Public/static/css/admin/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
-    <link href="/hlchat/Public/static/css/admin/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/hlchattest/Public/static/css/admin/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="/hlchattest/Public/static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="/hlchattest/Public/static/css/admin/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
 
-    <link href="/hlchat/Public/static/css/admin/animate.min.css" rel="stylesheet">
-    <link href="/hlchat/Public/static/css/admin/style.min862f.css?v=4.1.0" rel="stylesheet">
-    <link href="/hlchat/Public/static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="/hlchattest/Public/static/css/admin/animate.min.css" rel="stylesheet">
+    <link href="/hlchattest/Public/static/css/admin/style.min862f.css?v=4.1.0" rel="stylesheet">
+
 
 </head>
 
@@ -519,14 +520,14 @@
     </div>
 </div>
 
-<script src="/hlchat/Public/static/js/jquery.min.js?v=2.1.4"></script>
-<script src="/hlchat/Public/static/js/bootstrap.min.js?v=3.3.6"></script>
-<script src="/hlchat/Public/static/js/admin/layer.min.js"></script>
-<script src="/hlchat/Public/static/js/admin/content.min.js"></script>
-<script src="/hlchat/Public/static/js/admin/welcome.min.js"></script>
-<script src="/hlchat/Public/static/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
-<script src="/hlchat/Public/static/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
-<script src="/hlchat/Public/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="/hlchattest/Public/static/js/jquery.min.js?v=2.1.4"></script>
+<script src="/hlchattest/Public/static/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="/hlchattest/Public/static/js/admin/layer.min.js"></script>
+<script src="/hlchattest/Public/static/js/admin/content.min.js?v=1.0.0"></script>
+<!--<script src="/hlchattest/Public/static/js/admin/welcome.min.js"></script>-->
+<script src="/hlchattest/Public/static/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="/hlchattest/Public/static/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="/hlchattest/Public/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
 </body>
 
 

@@ -17,7 +17,7 @@ if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 // 开启调试模式 建议开发阶段开启 部署阶段注释或者设为false
 define('APP_DEBUG',True);
 //模块自动创建
-define('BIND_MODULE','Admin');
+define('BIND_MODULE','H');
 //模块中的控制器自动创建
 define('BUILD_CONTROLLER_LIST','Index,User');
 //模块中的模型自动创建

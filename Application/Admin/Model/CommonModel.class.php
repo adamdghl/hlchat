@@ -40,7 +40,7 @@ class CommonModel extends Model
      * @param string $field
      * @param string $order
      */
-    public function getList($condition, $field = '*', $order = array('order', 'id' => 'desc'))
+    public function getList($condition, $field = '*', $order = array('id' => 'desc'))
     {
         return $this->where($condition)->field($field)->order($order)->select();
     }
@@ -53,12 +53,12 @@ class CommonModel extends Model
      * @param int $limit
      * @param string $order
      */
-    public function getListWithPage($condition, $field = '*', $offset = 0, $limit = 10, $return_total = true, $order = array('order', 'id' => 'desc'))
+    public function getListWithPage($condition, $offset = 0, $limit = 10, $order = array('id' => 'desc'), $field = '*', $return_total = true)
     {
-        $result = $this->where($condition)->field($field)->limit($offset, $limit)->order("id desc")->order($order)->select();
+        $result = $this->where($condition)->field($field)->limit($offset, $limit)->order($order)->select();
         if ($return_total) {//是否要求返回符合条件的总记录数量
             $total = $this->getCount($condition);
-            return array('total' => $total, 'rows' => $result);
+            return array('total' => $total?$total:0, 'rows' => $result?$result:array());
         } else {
             return $result;
         }
@@ -120,12 +120,17 @@ class CommonModel extends Model
         if (empty($table_name)) {
             $table_name = $this->getTableName();
         }
-        if (!empty($condition)) {
-            $condition = " where " . $condition;
-        }
-        $sum = $this->query("select ifnull(sum({$field}),0) as s from {$table_name} {$condition}");
-        $sum = $sum[0];
-        return $sum['s'];
+        $sum = $this->table($table_name)->where($condition)->sum($field);
+        return $sum?$sum:0;
+//        if (empty($table_name)) {
+//            $table_name = $this->getTableName();
+//        }
+//        if (!empty($condition)) {
+//            $condition = " where " . $condition;
+//        }
+//        $sum = $this->query("select ifnull(sum({$field}),0) as s from {$table_name} {$condition}");
+//        $sum = $sum[0];
+//        return $sum['s'];
     }
 
     /**
@@ -139,12 +144,7 @@ class CommonModel extends Model
         if (empty($table_name)) {
             $table_name = $this->getTableName();
         }
-        if (!empty($condition)) {
-            $condition = " where " . $condition;
-        }
-        $count = $this->query("select count(*) as c from {$table_name} {$condition}");
-        $count = $count[0];
-        return $count['c'];
+        return $this->table($table_name)->where($condition)->count('*');
     }
 
     /**
